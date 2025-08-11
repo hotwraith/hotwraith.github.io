@@ -1,0 +1,31 @@
+#center {
+    text-align: center;
+}
+
+#imgcenter {
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
+#centerofcont {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title {
+    color: black;
+    background-color: white;
+    text-decoration: underline;
+}
+
+.menu {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+.top {}
+.bottom {}
