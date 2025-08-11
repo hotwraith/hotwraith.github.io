@@ -2,6 +2,7 @@
 
 let myQuotation = document.querySelector('.top');
 let myAuthor = document.querySelector('.bottom');
+let newQuoteButton = document.querySelector('button')
 
 function setQuote(allQuotes) {
     myQuote = allQuotes[getRandomInt(allQuotes.length-1)];
@@ -33,3 +34,11 @@ function getRandomInt(max) {
 fetch('assets/quotes.json')
     .then((response) => response.json())
     .then((json) => setQuote(json['allQuotes']))
+
+
+
+newQuoteButton.addEventListener("click", () => {
+    fetch('assets/quotes.json')
+    .then((response) => response.json())
+    .then((json) => setQuote(json['allQuotes']))
+});

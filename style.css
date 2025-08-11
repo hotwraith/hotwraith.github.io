@@ -27,5 +27,36 @@
   text-align: center;
 }
 
-.top {}
-.bottom {}
+.top {
+    text-align: center;
+}
+.bottom {
+    position: relative;
+}
+
+.container {
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.darkmode {
+    background-color: black;
+    color: whitesmoke;
+}
+
+.button-50 {
+    transition-duration: 0.4s;
+    background-color: black;
+    border-color: white;
+    color: white;
+    padding: 1%;
+}
+
+.button-50:hover {
+    background-color: white;
+    border-color: black;
+    color: black;
+}
