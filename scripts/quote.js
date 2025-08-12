@@ -14,7 +14,9 @@ function setQuote(allQuotes) {
 
 function buildQuoteString(quote) {
     let formattedQuote = quote[1]
-    let bottom = " -"+ quote[0] + " " + buildDateString(quote)
+    formattedQuote = formattedQuote.replace(/-\[+/g, '<br>-[')
+    let bottom = " -"+ quote[0].replace(/,/g, ' et ') + ", " + buildDateString(quote)
+    //let bottom = " -"+ quote[0].replace(/,/g, ' et ') + " " + '<u>'+buildDateString(quote)+'</u>'
     return [formattedQuote, bottom]
 }
 
