@@ -1,5 +1,9 @@
 //import Math from 
 
+const url = new URL('http://tick.infomancer.uk/galtick.json');
+const options = {
+  base: 'http://tick.infomancer.uk/'
+};
 let theTick = document.querySelector('.top');
 let newQuoteButton = document.querySelector('button');
 
@@ -21,13 +25,13 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
-fetch('http://tick.infomancer.uk/galtick.json')
+fetch(url, options)
     .then((response) => response.json())
     .then((json) => setTick(json))
 
 
 newQuoteButton.addEventListener("click", () => {
-    fetch('http://tick.infomancer.uk/galtick.json')
+    fetch(url, options)
     .then((response) => response.json())
     .then((json) => setTick(json))
 });
