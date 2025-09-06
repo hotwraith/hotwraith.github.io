@@ -35,8 +35,8 @@
 }
 
 .container {
-    width: 50%;
     position: absolute;
+    width: 50%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -59,4 +59,28 @@
     background-color: white;
     border-color: black;
     color: black;
+}
+
+.button-bingo {
+    background-color: white;
+    width: 10vh;
+    height: 10vh;
+    min-width: none;
+    min-height: none;
+    text-align: center;
+    transition-duration: 0.4s;
+}
+
+#randomized {}
+
+.reset {
+    font-size: large;
+}
+
+.button-bingo-active {
+    background-color: greenyellow;
+    width: 10vh;
+    height: 10vh;
+    text-align: center;
+    transition-duration: 0.4s;
 }
