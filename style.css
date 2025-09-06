@@ -78,6 +78,9 @@
 
 .button-bingo-active {
     background-color: greenyellow;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
     text-align: center;
     transition-duration: 0.4s;
 }
