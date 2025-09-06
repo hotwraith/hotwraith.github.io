@@ -11,7 +11,7 @@ function getRandomInt(max) {
 
 function buildBingo(allCases) {
     var shuffled
-    if(localStorage.getItem('currentOrder') == 'null'){
+    if(localStorage.getItem('currentOrder') == null){
         shuffled = shuffle(allCases)
         localStorage.setItem('currentOrder', JSON.stringify(shuffled));
     }
