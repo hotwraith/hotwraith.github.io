@@ -3,7 +3,13 @@
 let bingoButtons = document.querySelectorAll('#randomized');    
 let activableButtons = document.querySelectorAll('.button-bingo');    
 let resetButton = document.querySelector('.reset');   
-let listActive = [] 
+let listActive = []
+let pageTitle = document.title
+let regArray = document.getElementById('bingo').src
+
+regArray = regArray.match(/([A-z]*).json/i)
+var bingoFile = regArray[0]
+var bingoName = regArray[1]
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -11,12 +17,12 @@ function getRandomInt(max) {
 
 function buildBingo(allCases) {
     var shuffled
-    if(localStorage.getItem('currentOrder') == 'null'){
+    if(localStorage.getItem(bingoName+'currentOrder') == 'null'){
         shuffled = shuffle(allCases)
-        localStorage.setItem('currentOrder', JSON.stringify(shuffled));
+        localStorage.setItem(bingoName+'currentOrder', JSON.stringify(shuffled));
     }
     else {
-        shuffled = JSON.parse(localStorage.getItem('currentOrder'));
+        shuffled = JSON.parse(localStorage.getItem(bingoName+'currentOrder'));
     }
     for (let i = 0; i < bingoButtons.length; i++) {
         bingoButtons[i].innerHTML = shuffled[i][0]
@@ -43,14 +49,14 @@ function shuffle(array) {
 
 
 
-fetch('assets/Valbingo.json')
+fetch('assets/'+bingoFile)
     .then((response) => response.json())
-    .then((json) => buildBingo(json["allValbingo"]))
+    .then((json) => buildBingo(json["all"+bingoName]))
 
 
 
 resetButton.addEventListener("click", () => {
-    localStorage.setItem('currentOrder', null);
+    localStorage.setItem(bingoName+'currentOrder', null);
     localStorage.setItem('activeButtons', null);
     window.location.reload();
 })
