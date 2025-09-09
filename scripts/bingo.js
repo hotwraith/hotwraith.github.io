@@ -19,7 +19,7 @@ function buildBingo(allCases) {
         shuffled = JSON.parse(localStorage.getItem('currentOrder'));
     }
     for (let i = 0; i < bingoButtons.length; i++) {
-        bingoButtons[i].innerHTML = shuffled[i]
+        bingoButtons[i].innerHTML = shuffled[i][0]
     } 
 }
 
