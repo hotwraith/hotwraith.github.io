@@ -57,7 +57,7 @@ fetch('assets/'+bingoFile)
 
 resetButton.addEventListener("click", () => {
     localStorage.setItem(bingoName+'currentOrder', null);
-    localStorage.setItem('activeButtons', null);
+    localStorage.setItem(bingoName+'activeButtons', null);
     window.location.reload();
 })
 
@@ -67,15 +67,15 @@ for (let i = 0; i < activableButtons.length; i++) {
         if(activableButtons[i].className == "button-bingo-active"){
             activableButtons[i].className = "button-bingo"
             listActive[i] = false
-            localStorage.setItem('activeButtons', JSON.stringify(listActive))
+            localStorage.setItem(bingoName+'activeButtons', JSON.stringify(listActive))
         }
-        else {activableButtons[i].className = "button-bingo-active"; listActive[i] = true; localStorage.setItem('activeButtons', JSON.stringify(listActive))}
+        else {activableButtons[i].className = "button-bingo-active"; listActive[i] = true; localStorage.setItem(bingoName+'activeButtons', JSON.stringify(listActive))}
     });
     
 }
 
-if(localStorage.getItem('activeButtons') != 'null') {
-    listActive = JSON.parse(localStorage.getItem('activeButtons'))
+if(localStorage.getItem(bingoName+'activeButtons') != 'null') {
+    listActive = JSON.parse(localStorage.getItem(bingoName+'activeButtons'))
     for (let i = 0; i < listActive.length; i++) {
         if(listActive[i] == true) {
             activableButtons[i].className = "button-bingo-active"
