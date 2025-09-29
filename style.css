@@ -36,7 +36,6 @@
 
 .container {
     position: absolute;
-    width: 50%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -91,3 +90,24 @@
     top: 95%;
     transform: translate(-50%, -50%);
 }
+
+.container-grid {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: grid; 
+    grid-template-columns: repeat(5, 10vw);
+}
+
+@media (max-width: 479px) {
+    .container-grid {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: grid; 
+        grid-template-columns: repeat(5, 16vw);
+    }
+}
+
