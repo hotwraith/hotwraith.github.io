@@ -48,6 +48,7 @@ P.addEventListener("click", () => {
         shuffled.splice(0, 1)
         img.src = data + shuffled[0][0]
         charName.innerHTML = shuffled[0][1]
+        populateTable()
     }
     else {
         img.src = data + 'ewiyay.png'
@@ -61,6 +62,7 @@ S.addEventListener("click", () => {
         shuffled.splice(0, 1)
         img.src = data + shuffled[0][0]
         charName.textContent = shuffled[0][1]
+        populateTable()
     }
     else {
         img.src = data + 'ewiyay.png'
