@@ -57,7 +57,7 @@ P.addEventListener("click", () => {
     }
 });
 S.addEventListener("click", () => {
-    if(shuffled.length > 1){
+    if(shuffled.length > 0){
         sm.push(shuffled[0])
         shuffled.splice(0, 1)
         img.src = data + shuffled[0][0]
@@ -91,6 +91,6 @@ function populateTable() {
 }
 
 function shuffle(array) {
-  array.sort(() => Math.random() - 0.5);
-  return array;
+    array.sort(() => Math.random() - 0.5);
+    return array;
 }
