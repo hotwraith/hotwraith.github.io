@@ -47,14 +47,6 @@ function shuffle(array) {
 }
 
 
-
-
-fetch('assets/'+bingoFile)
-    .then((response) => response.json())
-    .then((json) => buildBingo(json["all"+bingoName]))
-
-
-
 resetButton.addEventListener("click", () => {
     localStorage.setItem(bingoName+'currentOrder', null);
     localStorage.setItem(bingoName+'activeButtons', null);
@@ -74,6 +66,10 @@ for (let i = 0; i < activableButtons.length; i++) {
     
 }
 
+if(localStorage.getItem(bingoName+'activeButtons') == null) {
+    localStorage.setItem(bingoName+'activeButtons', null);
+}
+
 if(localStorage.getItem(bingoName+'activeButtons') != 'null') {
     listActive = JSON.parse(localStorage.getItem(bingoName+'activeButtons'))
     for (let i = 0; i < listActive.length; i++) {
@@ -82,3 +78,12 @@ if(localStorage.getItem(bingoName+'activeButtons') != 'null') {
         }
     }
 }
+
+if(localStorage.getItem(bingoName+'currentOrder') == null) {
+    localStorage.setItem(bingoName+'currentOrder', null);
+}
+
+
+fetch('assets/'+bingoFile)
+    .then((response) => response.json())
+    .then((json) => buildBingo(json["all"+bingoName]))
